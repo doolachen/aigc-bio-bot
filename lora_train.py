@@ -41,7 +41,9 @@ if __name__ == '__main__':
         max_seq_length=MAX_SEQ_LENTH,
         dataset_num_proc=1,
         args=TrainingArguments(
-            per_device_train_batch_size=16,  
+            save_steps=100,
+            save_total_limit=3,
+            per_device_train_batch_size=12,  
             num_train_epochs=3,
             warmup_steps=5,
             max_steps=-1,
@@ -60,3 +62,8 @@ if __name__ == '__main__':
     trainer_stats = trainer.train(resume_from_checkpoint = False)
     # Save Lora config
     lora_model.save_pretrained_merged("models/DeepSeek-R1-Distill-Qwen-32B-Lora", tokenizer, save_method = "lora",)
+    
+    # Save Full model
+    lora_model.save_pretrained("models/DeepSeek-R1-Distill-Qwen-32B-Lora-Full") 
+    tokenizer.save_pretrained("models/DeepSeek-R1-Distill-Qwen-32B-Lora-Full")
+    lora_model.save_pretrained_merged("models/DeepSeek-R1-Distill-Qwen-32B-Lora-Full", tokenizer, save_method = "merged_16bit",)

@@ -177,3 +177,5 @@ models/DeepSeek*
 dataset/medical*
 
 .vscode
+
+outputs

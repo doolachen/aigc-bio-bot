@@ -42,7 +42,7 @@ def gen_dataset(dataset_name):
         dataset = load_from_disk(local_path)
     else:
         print("Downloading dataset from Hugging Face...")
-        dataset = load_dataset(dataset_name, "en", split="train", trust_remote_code=True)
+        dataset = load_dataset(dataset_name, "en", split="train[0:24000]", trust_remote_code=True)
         dataset = dataset.map(process_data, batched=True)
         os.makedirs(local_path, exist_ok=True)
         dataset.save_to_disk(local_path)
