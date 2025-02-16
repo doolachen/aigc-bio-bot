@@ -6,3 +6,4 @@ git+https://github.com/unslothai/unsloth.git
 trl
 bitsandbytes
 unsloth_zoo
+tensorboard

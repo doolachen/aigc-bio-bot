@@ -173,7 +173,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-models/models*
-models/.locks
+models/DeepSeek*
+dataset/medical*
 
 .vscode

@@ -1,6 +1,6 @@
 from huggingface_hub import snapshot_download
 
 if __name__ == '__main__':
-    model_name = "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
-    save_path = "./"
-    snapshot_download(repo_id=model_name, cache_dir=save_path)
+    model_name = "unsloth/DeepSeek-R1-Distill-Qwen-32B-bnb-4bit"
+    save_path = "./models/DeepSeek-R1-Distill-Qwen-32B"
+    snapshot_download(repo_id=model_name, local_dir=save_path)
