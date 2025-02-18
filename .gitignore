@@ -178,4 +178,4 @@ dataset/medical*
 
 .vscode
 
-outputs
+outputs/checkpoint*

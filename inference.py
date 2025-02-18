@@ -1,5 +1,5 @@
 import os 
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 import torch
 from unsloth import FastLanguageModel
@@ -33,8 +33,11 @@ if __name__ == '__main__':
     <think>{}"""
     
     # Test question
-    question = """A 45-year-old man with a long history of chronic alcohol use presents to the emergency department with severe epigastric pain radiating to his back, accompanied by nausea and vomiting. On physical examination, he appears distressed, and his abdomen is tender with guarding. Laboratory results reveal significantly elevated serum amylase and lipase levels.
-    Based on these findings, what is the most likely diagnosis, what potential complications should be anticipated, and what would be the recommended management strategy?
+    question = """A 52-year-old, nonsmoking man complains of pain and paresthesias in his right hand, paicularly at night. Examination reveals a diminished radial pulse when he abducts his arm when his head is turned to either side. A bruit is audible over the upper right anterior chest. His neurologic examination is unremarkable. You suspect the patient has 
+    A. Pancoast tumor 
+    B. A cervical rib 
+    C. Cervical disc disease 
+    D. Subclan steal syndrome
     """
     
     
