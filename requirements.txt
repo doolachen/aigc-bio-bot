@@ -7,3 +7,5 @@ trl
 bitsandbytes
 unsloth_zoo
 tensorboard
+streamlit
+langchain_openai

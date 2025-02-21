@@ -1,11 +1,12 @@
 import os 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 import torch
 from unsloth import FastLanguageModel
 
 if __name__ == '__main__':
-    path = "models/DeepSeek-R1-Distill-Qwen-32B"
+    # path = "models/DeepSeek-R1-Distill-Qwen-32B"
+    path = "models/DeepSeek-R1-Distill-Qwen-32B-Lora-Full-4bit"
     model, tokenizer = FastLanguageModel.from_pretrained(
             model_name=path,
             max_seq_length=4000,
@@ -48,7 +49,7 @@ if __name__ == '__main__':
     outputs = model.generate(
         input_ids=inputs.input_ids,
         attention_mask=inputs.attention_mask,
-        max_new_tokens=1200,
+        max_new_tokens=2048,
         use_cache=True,
     )
 
